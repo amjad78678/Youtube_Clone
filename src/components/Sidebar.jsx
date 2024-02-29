@@ -1,8 +1,19 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
+import store from '../Redux/store';
+import { Link } from 'react-router-dom';
 
 const Sidebar = () => {
+
+
+  const isMenuOpen=useSelector((store)=>store.app.isSideBarOpen)
+
+  //we can use early return pattern
+   if(!isMenuOpen) return null;
+
+   
   return (
-    <div className="col-span-1 text-xl">
+    <div className="col-span-1 text-xl shadow-lg">
       <ul>
         <li className="flex">
           <div className="p-2 me-4">
@@ -21,7 +32,9 @@ const Sidebar = () => {
               />
             </svg>
           </div>
-          <div className="py-4  text-gray-600">Home</div>
+          <div className="py-4  text-gray-600">
+            <Link to={`/`}>Home</Link>{' '}
+          </div>
         </li>
         <li className="flex">
           <div className="p-2 me-4">
@@ -55,20 +68,29 @@ const Sidebar = () => {
         </li>
       </ul>
 
-      <ul>
-        <h1 className="font-bold mt-5">Subscriptions</h1>
+      <ul className="px-5 mx-5">
+        <h1 className="font-bold mt-5 mb-2">Subscriptions</h1>
+
         <li>Music</li>
         <li>Sports</li>
         <li>Gaming</li>
         <li>Movies</li>
       </ul>
 
-      <ul>
-        <h1 className="font-bold mt-5">Watch Later</h1>
+      <ul className="px-5 mx-5">
+        <h1 className="font-bold mt-5 mb-2">Watch Later</h1>
         <li>Music</li>
         <li>Sports</li>
         <li>Gaming</li>
         <li>Movies</li>
+      </ul>
+
+      <ul className="px-5 mx-5">
+        <h1 className="font-bold mt-5 mb-2">Explore</h1>
+        <li>Trending</li>
+        <li>Shopping</li>
+        <li>Music</li>
+        <li>News</li>
       </ul>
     </div>
   );

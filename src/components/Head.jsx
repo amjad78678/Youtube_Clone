@@ -1,16 +1,29 @@
 import React from 'react'
+import { useDispatch } from 'react-redux';
+import { toggleSideBar } from '../Redux/appSlice';
 
 const Head = () => {
+
+const dispatch = useDispatch();
+
+const handleToggleMenu = () => {
+
+  dispatch(toggleSideBar())
+
+};   
+
+
+
   return (
     <div className="grid grid-flow-col">
       <div className="flex col-span-1 my-2">
-        <svg
+        <svg onClick={handleToggleMenu}
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
-          className="w-8 h-8 m-5"
+          className="w-8 h-8 m-5 cursor-pointer"
         >
           <path
             strokeLinecap="round"
