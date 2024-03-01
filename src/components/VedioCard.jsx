@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const VedioCard = ({info}) => {
 
-    console.log('info', info)
 
     const {snippet,statistics}=info
 
@@ -21,7 +20,7 @@ const VedioCard = ({info}) => {
       <ul>
         <li className="font-bold py-2">{title}</li>
         <li className="text-gray-600">{channelTitle}</li>
-        <li className="text-gray-600">{statistics.viewCount} views</li>
+        <li className="text-gray-600">{(statistics.viewCount/1000).toFixed(0)}K views</li>
       </ul>
     </div>
   );
