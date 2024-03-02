@@ -107,8 +107,8 @@ const getSearchSuggestions=async ()=>{
       <div className="col-span-10 m-5  mx-96 my-5 flex ">
         <div className="flex-1">
           <div className="flex">
-            <div className='flex-grow relative'>
-              <input 
+            <div className="flex-grow relative">
+              <input
                 onChange={(event) => setSearchQuery(event.target.value)}
                 onFocus={() => setShowSuggestions(true)}
                 onBlur={() => setShowSuggestions(false)}
@@ -117,8 +117,9 @@ const getSearchSuggestions=async ()=>{
                 className="h-12 w-full px-3 border border-gray-400 rounded-l-full shadow-lg"
                 placeholder="Search"
               />
-            
-              <svg onClick={()=>setSearchQuery('')}
+
+              <svg
+                onClick={() => setSearchQuery('')}
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -154,11 +155,11 @@ const getSearchSuggestions=async ()=>{
           {showSuggestions &&
             searchSuggestions &&
             searchSuggestions.length > 0 && (
-              <div className="absolute bg-white py-6 px-6 rounded-lg shadow-2xl w-4/12">
+              <div className="absolute  bg-white py-6 px-6 rounded-lg shadow-2xl w-4/12">
                 <ul>
                   {searchSuggestions &&
                     searchSuggestions.map((suggestion, i) => (
-                      <div key={i} className="flex">
+                      <div key={i} className="flex hover:bg-gray-200">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           fill="none"
@@ -173,7 +174,7 @@ const getSearchSuggestions=async ()=>{
                             d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z"
                           />
                         </svg>
-                        <li className="my-2 font-semibold text-xl text-gray-600">
+                        <li className="my-2  font-semibold text-xl text-gray-600">
                           {suggestion}
                         </li>
                       </div>
