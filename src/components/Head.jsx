@@ -19,7 +19,7 @@ const handleToggleMenu = () => {
 
 };   
 
-const [searchQuery,setSearchQuery]=useState('')
+const [searchQuery,setSearchQuery]=useState(null)
 
 const [searchSuggestions,setSearchSuggestions]=useState(null)
 
@@ -43,7 +43,12 @@ useEffect(()=>{
     
   }else{
 
-  getSearchSuggestions();
+
+    if(searchQuery!==null){
+      getSearchSuggestions();
+
+    }
+
 
 
   }
@@ -77,9 +82,7 @@ const getSearchSuggestions=async ()=>{
   );
 }
 
-  return searchSuggestions == null ? (
-    <Shimmer />
-  ) : (
+  return  (
     <div className="grid grid-flow-col">
       <div className="flex col-span-1 my-2">
         <svg
