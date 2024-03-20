@@ -11,7 +11,7 @@ const ChatMessage = ({name,message}) => {
 
       <span className="font-bold text-gray-400 mx-2">{name}</span>
 
-      <span className="mx-1">{message}</span>
+      <span className="mx-1 text-sm">{message}</span>
     </div>
   );
 }

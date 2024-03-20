@@ -49,8 +49,6 @@ useEffect(()=>{
 
     }
 
-
-
   }
     
   },200)
@@ -62,6 +60,7 @@ useEffect(()=>{
 },[searchQuery])
 
 
+console.log('iam search query',searchQuery)
 
 
 const getSearchSuggestions=async ()=>{
@@ -107,7 +106,7 @@ const getSearchSuggestions=async ()=>{
           alt="youtube_logo"
         />
       </div>
-      <div className="col-span-10 m-5  mx-96 my-5 flex ">
+      <div className="col-span-10 mx-32 my-5 flex ">
         <div className="flex-1">
           <div className="flex">
             <div className="flex-grow relative">
@@ -158,7 +157,7 @@ const getSearchSuggestions=async ()=>{
           {showSuggestions &&
             searchSuggestions &&
             searchSuggestions.length > 0 && (
-              <div className="absolute  bg-white py-6 px-6 rounded-lg shadow-2xl w-4/12">
+              <div className="absolute  bg-white py-6 px-5 rounded-lg shadow-2xl w-6/12">
                 <ul>
                   {searchSuggestions &&
                     searchSuggestions.map((suggestion, i) => (

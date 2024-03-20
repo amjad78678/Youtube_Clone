@@ -22,7 +22,7 @@ const WatchPage = () => {
 
   return (
     <div >
-      <div className=" ps-28 pt-5">
+      <div className="pt-5">
         <div className="flex">
           <iframe
             width="1200"
@@ -41,7 +41,7 @@ const WatchPage = () => {
         </div>
       </div>
 
-      <div className="col-span-11 ps-28 pb-5">
+      <div className="col-span-12">
         <CommentContainer />
       </div>
     </div>

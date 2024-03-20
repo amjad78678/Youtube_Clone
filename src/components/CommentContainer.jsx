@@ -78,7 +78,7 @@ const commentsData = [
 const CommentList=({comments})=>{
   
 return (
-  <div>
+  <div className=''>
     {comments.map((comment, index) => (
       <div key={index}>
         <Comment data={comment} />
@@ -95,7 +95,7 @@ return (
 
 const CommentContainer = () => {
   return (
-    <div >
+    <div className=''>
         <h1 className='font-bold text-3xl'>Comments : </h1>
        <CommentList comments={commentsData}/>
     </div>
